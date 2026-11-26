@@ -16,10 +16,10 @@
 
     <Label text="Registro de productos"/>
 
-    <TextField fx:id="campoNombre" promptText="Nombre del producto"/>
+    <TextField fx:id="campoNombre" promptText="Nombre del medicamento"/>
     <TextField fx:id="campoPrecio" promptText="Precio"/>
 
-    <Button text="Guardar producto" onAction="#guardarProducto"/>
+    <Button text="Guardar medicamento" onAction="#guardarProducto"/>
 
     <ListView fx:id="listaProductos" prefHeight="200"/>
 
