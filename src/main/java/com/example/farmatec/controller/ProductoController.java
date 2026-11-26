@@ -1,7 +1,6 @@
 // El controlador recibe eventos de la vista
 package com.example.farmatec.controller;
 
-import com.example.farmatec.model.Producto;
 import com.example.farmatec.service.ProductoService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

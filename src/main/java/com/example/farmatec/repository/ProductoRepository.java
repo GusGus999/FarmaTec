@@ -1,8 +1,6 @@
 //Se encarga únicamente de obtener o guardar datos
 package com.example.farmatec.repository;
 
-import com.example.farmatec.model.Producto;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
