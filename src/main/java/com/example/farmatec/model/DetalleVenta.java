@@ -6,8 +6,7 @@ public class DetalleVenta {
     private int idLote;
     private int cantidad;
     private double precioUnitario;
-
-    // Campos de apoyo para la tabla del carrito en Punto de Venta
+    
     private String nombreMedicamento;
     private String numeroLote;
 

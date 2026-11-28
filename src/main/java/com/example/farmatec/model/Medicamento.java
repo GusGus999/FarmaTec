@@ -25,7 +25,7 @@ public class Medicamento {
         this.precioCompra = precioCompra;
         this.precioVenta = precioVenta;
         this.ubicacion = ubicacion;
-    }
+    }  
 
     public int getIdMedicamento() { return idMedicamento; }
     public void setIdMedicamento(int idMedicamento) { this.idMedicamento = idMedicamento; }

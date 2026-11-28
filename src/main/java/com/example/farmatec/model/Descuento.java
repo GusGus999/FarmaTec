@@ -11,7 +11,6 @@ public class Descuento {
     private String tipoDescuento; // "Semaforo Amarillo" o "Semaforo Rojo"
     private int idSesion;
 
-    // Campo de apoyo para recordatorio de promociones
     private String descripcionLote;
 
     public Descuento() {}

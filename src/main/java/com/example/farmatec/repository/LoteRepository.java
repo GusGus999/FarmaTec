@@ -6,13 +6,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-package com.example.farmatec.repository;
-
-import com.example.farmatec.model.Descuento;
-import com.example.farmatec.model.Lote;
-import java.sql.*;
-        import java.util.ArrayList;
-import java.util.List;
 
 public class LoteRepository {
 

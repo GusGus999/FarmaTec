@@ -26,7 +26,6 @@ public class ServicioVentas {
         List<Lote> lotes = loteRepo.obtenerDisponiblesPorMedicamento(med.getIdMedicamento());
         Lote loteFEFO = algoritmoFEFO.ordenarPorCaducidad(lotes);
 
-        // Si no hay lotes vigentes pero sí uno caducado en anaquel, lo devolvemos marcado para disparar alerta restrictiva (RF-03)
         if (loteFEFO == null && !lotes.isEmpty()) {
             Lote primerLote = lotes.get(0);
             primerLote.setEstado("Caducado");

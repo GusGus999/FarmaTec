@@ -40,4 +40,4 @@ public class ControladorVentas {
     public List<Descuento> obtenerRecordatorioPromociones() {
         return servicioVentas.obtenerPromocionesActivas();
     }
-}
+}  

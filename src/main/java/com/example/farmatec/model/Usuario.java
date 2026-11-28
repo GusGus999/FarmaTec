@@ -17,7 +17,7 @@ public class Usuario {
 
     public boolean iniciarSesion(String credencialIngresada) {
         return this.credencial != null && this.credencial.equals(credencialIngresada);
-    }
+    } 
 
     public boolean esAdministrador() {
         return "Administrador".equalsIgnoreCase(this.rol);

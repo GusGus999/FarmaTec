@@ -49,4 +49,4 @@ public class ControladorInventario {
     public boolean registrarBajaMerma(int idLote, int cantidad) {
         return servicioInventario.darDeBajaMerma(idLote, cantidad, idSesionActiva);
     }
-}
+} 

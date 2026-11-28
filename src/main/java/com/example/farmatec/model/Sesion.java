@@ -18,7 +18,7 @@ public class Sesion {
         this.fin = fin;
     }
 
-    public void cerrarSesion() {
+    public void cerrarSesion() { 
         this.fin = LocalDateTime.now();
     }
 

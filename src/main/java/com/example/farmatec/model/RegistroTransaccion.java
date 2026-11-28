@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class RegistroTransaccion {
     private long idRegistro;
-    private String tipo; // "ENTRADA_COMPRA", "VENTA", "DESCUENTO", "BAJA_MERMA"
+    private String tipo; // "ENTRADA_COMPRA", "VENTA", "DESCUENTO", "BAJA_MERMA" 
     private LocalDateTime fechaHora;
     private int idSesion;
     private int idLote;
