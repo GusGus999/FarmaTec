@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox prefHeight="500.0" prefWidth="860.0" style="-fx-background-color: #322938; -fx-font-family: 'Segoe UI', sans-serif;"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.farmatec.controller.LoginController">
+
+    <!-- Panel Izquierdo: Identidad del Sistema -->
+    <VBox prefWidth="380.0" spacing="16.0" style="-fx-background-color: #CFC89A;">
+        <padding>
+            <Insets bottom="36.0" left="32.0" right="32.0" top="36.0" />
+        </padding>
+
+        <Label style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #322938;" text="FarmaTec" />
+        <Label style="-fx-font-size: 13px; -fx-text-fill: #322938;" text="Sistema de Gestión de Inventario y Punto de Venta con Rotación FEFO y Control de Caducidades." wrapText="true" />
+
+        <VBox spacing="2.0" style="-fx-background-color: rgba(50,41,56,0.08); -fx-background-radius: 8; -fx-border-color: #89A194; -fx-border-width: 0 0 0 4; -fx-padding: 8 12;">
+            <Label style="-fx-font-weight: bold; -fx-text-fill: #322938; -fx-font-size: 12px;" text="Rotación FEFO Automática" />
+            <Label style="-fx-text-fill: #322938; -fx-font-size: 11px;" text="Prioriza en caja el lote más próximo a vencer." />
+        </VBox>
+
+        <VBox spacing="2.0" style="-fx-background-color: rgba(50,41,56,0.08); -fx-background-radius: 8; -fx-border-color: #89A194; -fx-border-width: 0 0 0 4; -fx-padding: 8 12;">
+            <Label style="-fx-font-weight: bold; -fx-text-fill: #322938; -fx-font-size: 12px;" text="Semaforización Preventiva" />
+            <Label style="-fx-text-fill: #322938; -fx-font-size: 11px;" text="Alertas a 30, 60 y 90 días para remates oportunos." />
+        </VBox>
+
+        <VBox spacing="2.0" style="-fx-background-color: rgba(50,41,56,0.08); -fx-background-radius: 8; -fx-border-color: #89A194; -fx-border-width: 0 0 0 4; -fx-padding: 8 12;">
+            <Label style="-fx-font-weight: bold; -fx-text-fill: #322938; -fx-font-size: 12px;" text="Control de Lotes y Caducidades" />
+            <Label style="-fx-text-fill: #322938; -fx-font-size: 11px;" text="Trazabilidad completa desde recepción hasta venta." />
+        </VBox>
+
+        <Region VBox.vgrow="ALWAYS" />
+        <Label style="-fx-font-weight: bold; -fx-text-fill: #322938; -fx-font-size: 12px;" text="● Base de Datos MySQL: farmatec" />
+    </VBox>
+
+    <!-- Panel Derecho: Formulario de Acceso -->
+    <VBox alignment="CENTER_LEFT" spacing="14.0" style="-fx-background-color: #F5F4EE;" HBox.hgrow="ALWAYS">
+        <padding>
+            <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+        </padding>
+
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #322938;" text="Iniciar Sesión" />
+        <Label style="-fx-font-size: 13px; -fx-text-fill: #5A5260;" text="Seleccione su usuario e ingrese su credencial de acceso." />
+
+        <Label style="-fx-font-weight: bold; -fx-text-fill: #322938;" text="Usuario Registrado:" />
+        <ComboBox fx:id="cmbUsuario" maxWidth="1.7976931348623157E308" onAction="#actualizarSugerenciaPass" style="-fx-background-color: #FFFFFF; -fx-border-color: #CFC89A; -fx-border-width: 2; -fx-border-radius: 6;" />
+
+        <Label style="-fx-font-weight: bold; -fx-text-fill: #322938;" text="Credencial / Contraseña:" />
+        <PasswordField fx:id="txtCredencial" onAction="#iniciarSesion" promptText="Ingrese su contraseña..." style="-fx-background-color: #FFFFFF; -fx-border-color: #CFC89A; -fx-border-width: 2; -fx-border-radius: 6;" />
+
+        <Button maxWidth="1.7976931348623157E308" onAction="#iniciarSesion" style="-fx-background-color: #89A194; -fx-text-fill: #322938; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 12; -fx-background-radius: 8; -fx-cursor: hand;" text="Entrar al Sistema" />
+
+        <Label fx:id="lblMensajeError" style="-fx-text-fill: #A14016; -fx-font-weight: bold;" wrapText="true" />
+    </VBox>
+</HBox>

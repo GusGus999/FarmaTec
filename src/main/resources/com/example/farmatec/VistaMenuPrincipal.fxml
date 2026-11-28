@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="660.0" prefWidth="1040.0" style="-fx-background-color: #F5F4EE; -fx-font-family: 'Segoe UI', sans-serif;"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.farmatec.controller.MenuPrincipalController">
+
+    <!-- Barra Superior -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="14.0" style="-fx-background-color: #322938; -fx-padding: 16 26;">
+            <Label style="-fx-text-fill: #CFC89A; -fx-font-size: 24px; -fx-font-weight: bold;" text="FarmaTec" />
+            <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 15px;" text="|  Panel de Módulos del Sistema" />
+            <Region HBox.hgrow="ALWAYS" />
+            <VBox alignment="CENTER_RIGHT">
+                <Label fx:id="lblNombreUsuario" style="-fx-text-fill: #FFFFFF; -fx-font-weight: bold; -fx-font-size: 13px;" text="Usuario" />
+                <Label fx:id="lblRolUsuario" style="-fx-text-fill: #89A194; -fx-font-weight: bold; -fx-font-size: 12px;" text="Rol" />
+            </VBox>
+            <Button onAction="#cerrarSesion" style="-fx-background-color: #A14016; -fx-text-fill: #FFFFFF; -fx-font-weight: bold; -fx-padding: 8 14; -fx-background-radius: 6; -fx-cursor: hand;" text="Cerrar Sesión" />
+        </HBox>
+    </top>
+
+    <!-- Cuadrícula de Módulos -->
+    <center>
+        <VBox spacing="18.0">
+            <padding>
+                <Insets bottom="28.0" left="32.0" right="32.0" top="24.0" />
+            </padding>
+
+            <Label style="-fx-text-fill: #322938; -fx-font-size: 19px; -fx-font-weight: bold;" text="Seleccione el módulo al que desea ingresar:" />
+
+            <GridPane hgap="20.0" vgap="20.0" VBox.vgrow="ALWAYS">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="50.0" />
+                    <ColumnConstraints percentWidth="50.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints percentHeight="50.0" />
+                    <RowConstraints percentHeight="50.0" />
+                </rowConstraints>
+
+                <!-- MÓDULO ACTIVO: CU03 RECEPCIÓN DE COMPRAS (SAMUEL) -->
+                <VBox spacing="10.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #89A194; -fx-border-width: 2.5; -fx-border-radius: 12; -fx-background-radius: 12; -fx-padding: 20;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <HBox alignment="CENTER_LEFT">
+                        <Label style="-fx-background-color: #89A194; -fx-text-fill: #322938; -fx-font-weight: bold; -fx-padding: 4 10; -fx-background-radius: 10; -fx-font-size: 11px;" text="✓ MÓDULO LISTO • CU03" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="lblPermisoCu03" style="-fx-text-fill: #5A5260; -fx-font-size: 11px; -fx-font-weight: bold;" text="Acceso: Administrador" />
+                    </HBox>
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #322938;" text="Recepción de Compras y Lotes" />
+                    <Label style="-fx-font-size: 13px; -fx-text-fill: #5A5260;" text="Registro de mercancía nueva o existente, captura obligatoria de lote y caducidad (RF-01) y evaluación de demanda." wrapText="true" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <Button fx:id="btnAbrirCu03" maxWidth="1.7976931348623157E308" onAction="#abrirRecepcionCompras" style="-fx-background-color: #89A194; -fx-text-fill: #322938; -fx-font-weight: bold; -fx-font-size: 13px; -fx-padding: 11; -fx-background-radius: 8; -fx-cursor: hand;" text="Entrar a Recepción de Compras →" />
+                </VBox>
+
+                <!-- MÓDULO PENDIENTE: CU02 PUNTO DE VENTA -->
+                <VBox spacing="10.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #CFC89A; -fx-border-width: 2; -fx-border-style: dashed; -fx-border-radius: 12; -fx-background-radius: 12; -fx-padding: 20;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <HBox alignment="CENTER_LEFT">
+                        <Label style="-fx-background-color: #CC883A; -fx-text-fill: #FFFFFF; -fx-font-weight: bold; -fx-padding: 4 10; -fx-background-radius: 10; -fx-font-size: 11px;" text="⏳ PENDIENTE • CU02" />
+                    </HBox>
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #322938;" text="Punto de Venta (Rotación FEFO)" />
+                    <Label style="-fx-font-size: 13px; -fx-text-fill: #5A5260;" text="[Espacio reservado] Aquí se conectará la interfaz de cobro en caja, sugerencia automática de lote próximo a vencer y bloqueo de caducados." wrapText="true" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <Button maxWidth="1.7976931348623157E308" onAction="#mostrarModuloEnConstruccion" style="-fx-background-color: #CFC89A; -fx-text-fill: #322938; -fx-font-weight: bold; -fx-padding: 10; -fx-background-radius: 8; -fx-cursor: hand;" text="Ver estado del módulo CU02" />
+                </VBox>
+
+                <!-- MÓDULO PENDIENTE: CU01 GESTIÓN DE INVENTARIO -->
+                <VBox spacing="10.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #CFC89A; -fx-border-width: 2; -fx-border-style: dashed; -fx-border-radius: 12; -fx-background-radius: 12; -fx-padding: 20;" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <HBox alignment="CENTER_LEFT">
+                        <Label style="-fx-background-color: #CC883A; -fx-text-fill: #FFFFFF; -fx-font-weight: bold; -fx-padding: 4 10; -fx-background-radius: 10; -fx-font-size: 11px;" text="⏳ PENDIENTE • CU01" />
+                    </HBox>
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #322938;" text="Consulta y Gestión de Inventario" />
+                    <Label style="-fx-font-size: 13px; -fx-text-fill: #5A5260;" text="[Espacio reservado - Leticia] Aquí irá el catálogo general de medicamentos, buscador por nombre/marca y edición de precios o ubicación." wrapText="true" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <Button maxWidth="1.7976931348623157E308" onAction="#mostrarModuloEnConstruccion" style="-fx-background-color: #CFC89A; -fx-text-fill: #322938; -fx-font-weight: bold; -fx-padding: 10; -fx-background-radius: 8; -fx-cursor: hand;" text="Ver estado del módulo CU01" />
+                </VBox>
+
+                <!-- MÓDULO PENDIENTE: CU04 ALERTAS Y PROMOCIONES -->
+                <VBox spacing="10.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #CFC89A; -fx-border-width: 2; -fx-border-style: dashed; -fx-border-radius: 12; -fx-background-radius: 12; -fx-padding: 20;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <HBox alignment="CENTER_LEFT">
+                        <Label style="-fx-background-color: #CC883A; -fx-text-fill: #FFFFFF; -fx-font-weight: bold; -fx-padding: 4 10; -fx-background-radius: 10; -fx-font-size: 11px;" text="⏳ PENDIENTE • CU04" />
+                    </HBox>
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #322938;" text="Alertas Tempranas y Remates" />
+                    <Label style="-fx-font-size: 13px; -fx-text-fill: #5A5260;" text="[Espacio reservado - Perla] Aquí irá el panel semaforizado por caducidad, asignación de descuentos temporales y baja por merma." wrapText="true" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <Button maxWidth="1.7976931348623157E308" onAction="#mostrarModuloEnConstruccion" style="-fx-background-color: #CFC89A; -fx-text-fill: #322938; -fx-font-weight: bold; -fx-padding: 10; -fx-background-radius: 8; -fx-cursor: hand;" text="Ver estado del módulo CU04" />
+                </VBox>
+            </GridPane>
+        </VBox>
+    </center>
+</BorderPane>

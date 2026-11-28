@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="700.0" prefWidth="1080.0" style="-fx-background-color: #F5F4EE; -fx-font-family: 'Segoe UI', sans-serif;"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.farmatec.controller.RecepcionComprasController">
+
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="14.0" style="-fx-background-color: #322938; -fx-padding: 14 24;">
+            <Label style="-fx-text-fill: #CFC89A; -fx-font-size: 22px; -fx-font-weight: bold;" text="FarmaTec" />
+            <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 15px;" text="|  CU03: Recepción de Mercancía y Registro de Lotes" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label style="-fx-background-color: #89A194; -fx-text-fill: #322938; -fx-font-weight: bold; -fx-padding: 5 14; -fx-background-radius: 14;" text="Rol: Administrador" />
+            <Button onAction="#volverAlMenu" style="-fx-background-color: #CFC89A; -fx-text-fill: #322938; -fx-font-weight: bold; -fx-padding: 6 14; -fx-background-radius: 6; -fx-cursor: hand;" text="← Menú Principal" /><Button onAction="#volverAlMenu" style="-fx-background-color: #CFC89A; -fx-text-fill: #322938; -fx-font-weight: bold; -fx-padding: 6 14; -fx-background-radius: 6; -fx-cursor: hand;" text="← Menú Principal" />
+        </HBox>
+    </top>
+
+
+    <center>
+        <VBox spacing="16.0">
+            <padding>
+                <Insets bottom="20.0" left="24.0" right="24.0" top="18.0" />
+            </padding>
+
+            <HBox alignment="CENTER_LEFT" spacing="12.0" style="-fx-background-color: #CFC89A; -fx-padding: 14 18; -fx-background-radius: 10;">
+                <Label style="-fx-text-fill: #322938; -fx-font-weight: bold; -fx-font-size: 14px;" text="Código de Barras:" />
+                <TextField fx:id="txtCodigoBarras" onAction="#capturarCodigoIngreso" prefWidth="260.0" promptText="Escanee o escriba código..." style="-fx-background-color: #FFFFFF; -fx-border-color: #322938; -fx-border-radius: 6; -fx-background-radius: 6;" />
+                <Button onAction="#capturarCodigoIngreso" style="-fx-background-color: #322938; -fx-text-fill: #FFFFFF; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 6; -fx-cursor: hand;" text="Verificar Catálogo" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="lblEstadoProducto" style="-fx-background-color: #CC883A; -fx-text-fill: #FFFFFF; -fx-font-weight: bold; -fx-padding: 6 14; -fx-background-radius: 8;" text="Esperando lectura de código..." />
+            </HBox>
+
+
+            <HBox spacing="18.0">
+
+
+                <VBox spacing="10.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #CFC89A; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 16;" HBox.hgrow="ALWAYS">
+                    <Label style="-fx-text-fill: #322938; -fx-font-size: 15px; -fx-font-weight: bold;" text="1. Datos del Medicamento (Catálogo)" />
+                    <GridPane hgap="10.0" vgap="9.0">
+                        <columnConstraints>
+                            <ColumnConstraints prefWidth="130.0" />
+                            <ColumnConstraints hgrow="ALWAYS" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints /><RowConstraints /><RowConstraints /><RowConstraints /><RowConstraints /><RowConstraints /><RowConstraints />
+                        </rowConstraints>
+
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #322938;" text="Marca / Lab:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="txtMarca" promptText="Ej. Tempra" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #322938;" text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtNombre" promptText="Ej. Paracetamol" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #322938;" text="Concentración:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtConcentracion" promptText="Ej. 500 mg" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #322938;" text="Presentación:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtPresentacion" promptText="Ej. Caja c/20 tabletas" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #322938;" text="Precio Compra ($):" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtPrecioCompra" promptText="0.00" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #322938;" text="Precio Venta ($):" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <TextField fx:id="txtPrecioVenta" promptText="0.00" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #322938;" text="Ubicación:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                        <TextField fx:id="txtUbicacion" promptText="Ej. Estante A-2" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                    </GridPane>
+                </VBox>
+
+
+                <VBox spacing="12.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #89A194; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 16;" HBox.hgrow="ALWAYS">
+                    <Label style="-fx-text-fill: #322938; -fx-font-size: 15px; -fx-font-weight: bold;" text="2. Datos Obligatorios del Lote (RF-01)" />
+                    <GridPane hgap="10.0" vgap="12.0">
+                        <columnConstraints>
+                            <ColumnConstraints prefWidth="145.0" />
+                            <ColumnConstraints hgrow="ALWAYS" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints /><RowConstraints /><RowConstraints />
+                        </rowConstraints>
+
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #322938;" text="Número de Lote *:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="txtNumeroLote" promptText="Ej. L-2026B" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #322938;" text="Fecha Caducidad *:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <DatePicker fx:id="dpFechaCaducidad" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #322938;" text="Cantidad Recibida *:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtCantidad" promptText="Unidades físicas recibidas" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    </GridPane>
+
+                    <Label fx:id="lblSugerenciaDemanda" style="-fx-background-color: #CFC89A; -fx-text-fill: #322938; -fx-padding: 10 12; -fx-background-radius: 6; -fx-font-size: 12px;" text="Evaluación de demanda: Verifique el código para revisar stock actual." wrapText="true" />
+
+                    <Region VBox.vgrow="ALWAYS" />
+
+                    <HBox alignment="CENTER_RIGHT" spacing="12.0">
+                        <Button onAction="#cancelarCaptura" style="-fx-background-color: #A14016; -fx-text-fill: #FFFFFF; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 6; -fx-cursor: hand;" text="Cancelar / Limpiar" />
+                        <Button onAction="#capturarDatosLote" style="-fx-background-color: #89A194; -fx-text-fill: #322938; -fx-font-weight: bold; -fx-padding: 10 24; -fx-background-radius: 6; -fx-cursor: hand;" text="✓ Guardar Ingreso" />
+                    </HBox>
+                </VBox>
+            </HBox>
+
+
+            <VBox spacing="6.0" VBox.vgrow="ALWAYS">
+                <Label style="-fx-text-fill: #322938; -fx-font-weight: bold; -fx-font-size: 14px;" text="Ingresos Registrados en esta Sesión (Log: ENTRADA_COMPRA):" />
+                <TableView fx:id="tblIngresos" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colCodigo" prefWidth="140.0" text="Código" />
+                        <TableColumn fx:id="colMedicamento" prefWidth="250.0" text="Medicamento" />
+                        <TableColumn fx:id="colLote" prefWidth="140.0" text="Lote" />
+                        <TableColumn fx:id="colCaducidad" prefWidth="140.0" text="Caducidad" />
+                        <TableColumn fx:id="colCantidad" prefWidth="110.0" text="Cantidad" />
+                        <TableColumn fx:id="colUbicacion" prefWidth="160.0" text="Ubicación" />
+                    </columns>
+                </TableView>
+            </VBox>
+
+        </VBox>
+    </center>
+</BorderPane>
