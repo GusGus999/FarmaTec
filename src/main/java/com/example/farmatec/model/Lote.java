@@ -3,7 +3,7 @@ package com.example.farmatec.model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-
+ 
 public class Lote {
     private int idLote;
     private int idMedicamento;
@@ -69,4 +69,4 @@ public class Lote {
 
     public double getPrecioVentaBase() { return precioVentaBase; }
     public void setPrecioVentaBase(double precioVentaBase) { this.precioVentaBase = precioVentaBase; }
-}  
+}

@@ -10,7 +10,7 @@ public class Descuento {
     private LocalDateTime fechaFin;
     private String tipoDescuento; // "Semaforo Amarillo" o "Semaforo Rojo"
     private int idSesion;
-
+ 
     private String descripcionLote;
 
     public Descuento() {}

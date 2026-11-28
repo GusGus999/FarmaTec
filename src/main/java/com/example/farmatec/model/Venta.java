@@ -19,7 +19,7 @@ public class Venta {
         this.idVenta = idVenta;
         this.fechaHora = fechaHora;
         this.idSesion = idSesion;
-        this.total = total;  
+        this.total = total;
     }
 
     public double calcularTotal() {

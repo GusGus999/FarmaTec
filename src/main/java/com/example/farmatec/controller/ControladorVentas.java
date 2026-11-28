@@ -9,7 +9,7 @@ import com.example.farmatec.repository.MedicamentoRepository;
 import com.example.farmatec.service.ServicioVentas;
 import com.example.farmatec.service.ValidadorCaducidad;
 import java.util.List;
-
+ 
 public class ControladorVentas {
 
     private final ServicioVentas servicioVentas = new ServicioVentas();
@@ -40,4 +40,4 @@ public class ControladorVentas {
     public List<Descuento> obtenerRecordatorioPromociones() {
         return servicioVentas.obtenerPromocionesActivas();
     }
-}  
+}

@@ -6,7 +6,7 @@ public class DetalleVenta {
     private int idLote;
     private int cantidad;
     private double precioUnitario;
-    
+     
     private String nombreMedicamento;
     private String numeroLote;
 

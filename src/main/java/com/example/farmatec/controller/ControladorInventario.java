@@ -21,7 +21,7 @@ public class ControladorInventario {
 
     public boolean actualizarProducto(Medicamento med) {
         return servicioInventario.actualizarProducto(med);
-    }
+    }  
 
     public boolean registrarIngresoCompra(Medicamento med, Lote lote) {
         if (lote == null || lote.getNumeroLote() == null || lote.getCantidad() <= 0) {
@@ -49,4 +49,4 @@ public class ControladorInventario {
     public boolean registrarBajaMerma(int idLote, int cantidad) {
         return servicioInventario.darDeBajaMerma(idLote, cantidad, idSesionActiva);
     }
-} 
+}
